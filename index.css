@@ -54,3 +54,22 @@ header {
     font-size: 16px;
     font-weight: 500;
 }
+
+main{
+    margin: 0;
+    padding: 40px;
+    background-color: #F4F4F4;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+section{
+    background-color: white;
+    padding: 10px 20px;
+}
+
+section h3{
+    color: #E11D48;
+    font-size: 20px;
+}
