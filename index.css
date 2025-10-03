@@ -16,19 +16,6 @@ body {
     padding: 0;
     font-family: "Inter", Arial, sans-serif;
     text-align: center;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    background: radial-gradient(circle at 20% 30%, rgba(255, 100, 150, 0.2), transparent 40%),
-              radial-gradient(circle at 80% 70%, rgba(100, 150, 255, 0.2), transparent 40%);
-}
-
-#container{
-    max-width: fit-content;
-    border: 2px solid #881337;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 h1{
@@ -47,7 +34,7 @@ header {
     padding: 40px;
 }
 
-#userInput{
+#user-input{
     background-color: inherit;
     border: 2px solid #FDA4AF;
     border-radius: 5px;
@@ -84,6 +71,7 @@ main{
     flex-direction: column;
     gap: 25px;
     background: #f7f7f7;
+    min-height: 100vh;
 }
 
 section{
@@ -94,4 +82,26 @@ section{
 section h3{
     color: #E11D48;
     font-size: 20px;
+}
+
+@media (min-width: 768px) {
+    body{
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        background: radial-gradient(circle at 20% 30%, rgba(255, 100, 150, 0.2), transparent 40%),
+                    radial-gradient(circle at 80% 70%, rgba(100, 150, 255, 0.2), transparent 40%);
+    }
+    
+    #container{
+        max-width: fit-content;
+        border: 2px solid #881337;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+    
+    main{
+        min-height: auto;
+    }
 }
