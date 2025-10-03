@@ -4,16 +4,33 @@
 1 kilogram = 2.204 pound
 */
 
-const userInputEl = document.getElementById("user-input")
+const inputEl = document.getElementById("user-input")
 const convertBtn = document.getElementById("convert-btn")
 const lengthOutputEl = document.getElementById("length-output")
 const volumeOutputEl = document.getElementById("volume-output")
 const massOutputEl = document.getElementById("mass-output")
 
-lengthOutputEl.textContent = `20 meters = 65.616 feet | 20 feet = 6.096 meters`
-volumeOutputEl.textContent = `20 liters = 5.284 gallons | 20 gallons = 75.708 liters`
-massOutputEl.textContent = `20 kilos = 44.092 pounds | 20 pounds = 9.072 kilos`
+function processInput (){
+    const value = inputEl.value
+    calculateConversions(value)
+}
 
-function convert (input){
-    
+processInput() // Run once with default value 20
+
+convertBtn.addEventListener('click', processInput)
+
+function calculateConversions (input){
+    const feet = (input * 3.281).toFixed(3);
+    const meters = (input / 3.281).toFixed(3);
+    const gallons = (input * 0.264).toFixed(3);
+    const liters = (input / 0.264).toFixed(3);
+    const pounds = (input * 2.204).toFixed(3);
+    const kilos = (input / 2.204).toFixed(3);
+    renderResults(input, feet, meters, gallons, liters, pounds, kilos)
+}
+
+function renderResults (input, feet, meters, gallons, liters, pounds, kilos){
+    lengthOutputEl.textContent = `${input} meters = ${feet} feet | ${input} feet = ${meters} meters`
+    volumeOutputEl.textContent = `${input} liters = ${gallons} gallons | ${input} gallons = ${liters} liters`
+    massOutputEl.textContent = `${input} kilos = ${pounds} pounds | ${input} pounds = ${kilos} kilos`
 }
